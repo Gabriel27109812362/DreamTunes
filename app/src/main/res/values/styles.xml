@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">#000</item>
+    </style>
+
+
+    <!--    Click to play info styles-->
+    <style name="click_play">
+        <item name="android:textSize">
+            12sp
+        </item>
+        <item name="android:textColor">
+            #FFB900
+        </item>
+        <item name="android:textAlignment">
+            center
+        </item>
+        <item name="android:fontFamily">
+            @font/open_sans
+        </item>
+
+    </style>
+</resources>

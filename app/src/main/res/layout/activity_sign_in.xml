@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_in_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity">
+
+
+    <ImageView
+        android:id="@+id/title_start"
+        android:layout_width="317dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_main_title" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="344dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_start">
+
+
+        <EditText
+            android:id="@+id/email_sign_in_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/text_input"
+            android:ems="10"
+            android:textAppearance="@style/input_text"
+
+            android:textColorHint="@color/colorMain"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="323dp"
+            tools:layout_editor_absoluteX="75dp"
+            tools:layout_editor_absoluteY="634dp" />
+
+        <EditText
+            android:id="@+id/password_sign_in_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/text_input"
+            android:ems="10"
+            android:textAppearance="@style/input_text"
+            android:textColorHint="@color/colorMain"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            tools:layout_conversion_absoluteHeight="32dp"
+            tools:layout_conversion_absoluteWidth="323dp"
+            tools:layout_editor_absoluteX="68dp"
+            tools:layout_editor_absoluteY="592dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/colorMain"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/remember"
+        android:textColor="@color/colorMain"
+        android:textSize="13sp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout><!--

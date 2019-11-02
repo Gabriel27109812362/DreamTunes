@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:background">#000</item>
+        <item name="android:background">@color/colorBackground</item>
     </style>
 
 
@@ -12,7 +12,7 @@
             12sp
         </item>
         <item name="android:textColor">
-            #FFB900
+            @color/colorMain
         </item>
         <item name="android:textAlignment">
             center
@@ -22,4 +22,16 @@
         </item>
 
     </style>
+
+
+<style name="input_text">
+    <item name="android:textColor">@color/colorMain</item>
+    <item name="android:fontFamily">@font/open_sans</item>
+    <item name="android:textSize">16dp</item>
+</style>
+
+
+
+
+
 </resources>

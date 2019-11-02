@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_UP: {
                         v.setBackgroundResource(R.drawable.ic_play_button);
                     }
+                    default:
+                        break;
                 }
 
                 return true;

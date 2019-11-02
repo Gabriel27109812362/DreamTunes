@@ -32,7 +32,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/play_to_start"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="165dp"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/play_to_start" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

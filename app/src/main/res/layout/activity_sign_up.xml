@@ -7,7 +7,7 @@
     tools:context=".sign_up">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_top_title"
         android:layout_width="317dp"
         android:layout_height="74dp"
         android:layout_marginTop="55dp"
@@ -32,7 +32,7 @@
         android:textColorHint="@color/colorMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/image_top_title" />
 
     <EditText
         android:id="@+id/input_surname"
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/or_sign_up_fb_text" />
 
     <TextView
-        android:id="@+id/have_an_account"
+        android:id="@+id/have_an_account_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="145dp"
@@ -149,6 +149,6 @@
         android:background="@drawable/ic_sign_in_link"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/have_an_account" />
+        app:layout_constraintTop_toBottomOf="@+id/have_an_account_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

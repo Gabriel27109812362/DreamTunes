@@ -27,7 +27,6 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="46dp"
-
         android:background="@drawable/text_input"
         android:ems="10"
         android:hint="@string/email_hint"
@@ -41,7 +40,7 @@
         tools:layout_conversion_absoluteWidth="323dp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/remember_me_check_box"
         android:layout_width="149dp"
         android:layout_height="44dp"
         android:layout_marginStart="42dp"
@@ -81,20 +80,20 @@
         android:layout_width="142dp"
         android:layout_height="37dp"
         android:layout_marginStart="134dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="135dp"
         android:background="@drawable/ic_sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/remember_me_check_box" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/dont_have_account_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="73dp"
         android:layout_marginEnd="130dp"
         android:fontFamily="@font/open_sans"
         android:text="@string/dont_have_acccount"
@@ -114,7 +113,7 @@
         android:background="@drawable/ic_sign_up_link"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/dont_have_account_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

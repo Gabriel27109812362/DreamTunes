@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DreamTunes</string>
     <string name="play_to_start">Click play to Start</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="remember">Remember me</string>
+    <string name="dont_have_acccount">"Don't have an account ?"</string>
 </resources>

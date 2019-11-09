@@ -9,4 +9,5 @@
     <string name="surname">Surname</string>
     <string name="sign_up_fb">Or sign up with facebook</string>
     <string name="have_an_account">Have an account ?</string>
+    <string name="random">Play random</string>
 </resources>

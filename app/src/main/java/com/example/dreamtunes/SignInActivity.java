@@ -40,8 +40,28 @@ public class SignInActivity extends AppCompatActivity {
         });
 
 
+        signIn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_UP: {
+                        v.setBackgroundResource(R.drawable.ic_sign_in_button);
+                        break;
+                    }
+                    case MotionEvent.ACTION_DOWN: {
+                        v.setBackgroundResource(R.drawable.ic_sign_in_button_clicked);
+                        break;
+                    }
+
+                    default:
+                        break;
+                }
 
 
+                return true;
+            }
+        });
 
 
         signUpLink.setOnClickListener(new View.OnClickListener() {

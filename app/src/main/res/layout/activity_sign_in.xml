@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/title_start"
+        android:id="@+id/title_start_second"
         android:layout_width="317dp"
         android:layout_height="74dp"
         android:layout_marginTop="55dp"
@@ -22,20 +22,21 @@
 
     <EditText
         android:id="@+id/email_sign_in_input"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="46dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="45dp"
         android:background="@drawable/text_input"
         android:ems="10"
+        android:textColor="@color/colorMain"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
         android:textAppearance="@style/input_text"
         android:textColorHint="@color/colorMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_sign_in_input"
+        app:layout_constraintTop_toBottomOf="@+id/title_start_second"
         tools:layout_conversion_absoluteHeight="32dp"
         tools:layout_conversion_absoluteWidth="323dp" />
 
@@ -43,7 +44,7 @@
         android:id="@+id/remember_me_check_box"
         android:layout_width="149dp"
         android:layout_height="44dp"
-        android:layout_marginStart="42dp"
+        android:layout_marginStart="45dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="217dp"
         android:buttonTint="@color/colorMain"
@@ -54,15 +55,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_sign_in_input" />
+        app:layout_constraintTop_toBottomOf="@+id/password_sign_in_input" />
 
     <EditText
         android:id="@+id/password_sign_in_input"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="46dp"
+        android:textColor="@color/colorMain"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="45dp"
         android:background="@drawable/text_input"
         android:ems="10"
         android:hint="@string/password_hint"
@@ -71,7 +73,7 @@
         android:textColorHint="@color/colorMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_start"
+        app:layout_constraintTop_toBottomOf="@+id/email_sign_in_input"
         tools:layout_conversion_absoluteHeight="32dp"
         tools:layout_conversion_absoluteWidth="323dp" />
 

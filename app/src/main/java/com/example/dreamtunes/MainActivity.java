@@ -3,6 +3,7 @@ package com.example.dreamtunes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         playToStart = findViewById(R.id.play_to_start);
 
+
         playToStart.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case MotionEvent.ACTION_UP: {
                         v.setBackgroundResource(R.drawable.ic_play_button);
+                        navigateToSignIn();
+                        break;
                     }
                     default:
                         break;
@@ -47,5 +51,15 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
+
     }
+
+    public void navigateToSignIn() {
+        Intent signInActivity = new Intent(this, SignInActivity.class);
+        startActivity(signInActivity);
+    }
+
+
 }

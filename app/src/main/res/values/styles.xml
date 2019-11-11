@@ -31,6 +31,12 @@
 </style>
 
 
+<!--    <style name="progress" parent="android:Widget.ProgressBar.Horizontal">-->
+<!--        <item name=""></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--        <item></item>-->
+<!--    </style>-->
 
 
 

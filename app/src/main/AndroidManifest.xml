@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainPlayer"></activity>
+        <service
+            android:name=".Services.UserService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".MainPlayer" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".MainActivity">

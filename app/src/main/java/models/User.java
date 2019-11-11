@@ -13,7 +13,6 @@ public class User {
     private String password;
     private Base64 photo;
 
-
     public User() {
         this.uuid = UUID.randomUUID();
     }

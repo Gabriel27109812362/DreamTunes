@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView vinyl;
     private Button playToStart;
 
+
     @SuppressLint("ClickableViewAccessibility")
 
     @Override

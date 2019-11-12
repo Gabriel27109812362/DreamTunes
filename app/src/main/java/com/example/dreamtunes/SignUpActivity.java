@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.dreamtunes.Services.UserService;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -73,8 +75,14 @@ public class SignUpActivity extends AppCompatActivity {
 
                         v.setBackgroundResource(R.drawable.ic_sign_up_button);
 
+                        Intent userService = createUserServiceIntent();
 
+                         userService.putExtra("name", inputs.get(Inputs.NAME).getText().toString());
+                        userService.putExtra("surname", inputs.get(Inputs.SURNAME).getText().toString());
+                        userService.putExtra("email", inputs.get(Inputs.EMAIL).getText().toString());
+                        userService.putExtra("password", inputs.get(Inputs.PASSWORD).getText().toString());
 
+                        startService(userService);
 
                         break;
                     }
@@ -102,6 +110,8 @@ public class SignUpActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_UP: {
 
                         v.setBackgroundResource(R.drawable.ic_facebook_ico);
+
+
                         break;
                     }
                     default:
@@ -116,6 +126,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    public Intent createUserServiceIntent() {
+        return new Intent(this, UserService.class);
+    }
 
     public void navigateToSignInActivity() {
         Intent signInActivity = new Intent(this, SignInActivity.class);

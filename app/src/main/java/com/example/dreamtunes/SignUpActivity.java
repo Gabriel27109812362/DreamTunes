@@ -8,7 +8,11 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -17,6 +21,9 @@ public class SignUpActivity extends AppCompatActivity {
     private ImageView imageTopTitle;
     private Button signUp;
     private Button facebook;
+
+    private Map<Inputs, EditText> inputs = new HashMap<Inputs, EditText>();
+
 
     @SuppressLint("ClickableViewAccessibility")
 
@@ -31,6 +38,12 @@ public class SignUpActivity extends AppCompatActivity {
         imageTopTitle = findViewById(R.id.title_start_third);
         signUp = findViewById(R.id.button_sign_up);
         facebook = findViewById(R.id.sign_up_with_fb_btn);
+
+        inputs.put(Inputs.NAME, (EditText) findViewById(R.id.input_name));
+        inputs.put(Inputs.SURNAME, (EditText) findViewById(R.id.input_surname));
+        inputs.put(Inputs.EMAIL, (EditText) findViewById(R.id.input_email));
+        inputs.put(Inputs.PASSWORD, (EditText) findViewById(R.id.input_password));
+
 
         imageTopTitle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,11 +72,14 @@ public class SignUpActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_UP: {
 
                         v.setBackgroundResource(R.drawable.ic_sign_up_button);
+
+
+
+
                         break;
                     }
                     default:
                         break;
-
 
                 }
 

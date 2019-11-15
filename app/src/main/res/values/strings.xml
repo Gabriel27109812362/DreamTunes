@@ -11,6 +11,20 @@
     <string name="have_an_account">Have an account ?</string>
     <string name="random">Play random</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+
+<!--    Validators-->
+
+    <string name="name_required">Name is Required</string>
+    <string name="surname_required">Surname is Required</string>
+    <string name="email_required">Email is Required</string>
+    <string name="password_required">Password is Required</string>
+
+    <string name="wrong_format">Wrong format</string>
+    <string name="password_to_short">Password to short</string>
+    <string name="password_ok">Password correct</string>
+
 </resources>

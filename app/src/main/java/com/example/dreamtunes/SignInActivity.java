@@ -78,10 +78,12 @@ public class SignInActivity extends AppCompatActivity {
     public void navigateToMainActivity() {
         Intent mainActivity = new Intent(this, MainActivity.class);
         startActivity(mainActivity);
+        finish();
     }
 
     public void navigateToSignUpActivity() {
         Intent signUpActivity = new Intent(this, SignUpActivity.class);
         startActivity(signUpActivity);
+        finish();
     }
 }

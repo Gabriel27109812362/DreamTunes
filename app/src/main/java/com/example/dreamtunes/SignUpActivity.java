@@ -5,16 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.dreamtunes.Services.UserService;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import validators.InputValidator;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -61,10 +65,31 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+
+        inputs.get(Inputs.NAME).addTextChangedListener(new InputValidator((EditText) findViewById(R.id.input_name)) {
+            @Override
+            public void validate(EditText textView, String text) {
+                TextView validator = findViewById(R.id.validator_name);
+
+                if (text.length() == 0) {
+                    validator.setText(R.string.name_required);
+                    signUp.setEnabled(false);
+                } else {
+                    validator.setText(null);
+                    signUp.setEnabled(true);
+                }
+
+                Log.i("text", text);
+                Log.i("Edit Text", textView.getText().toString());
+            }
+        });
+
+
+
+
         signUp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-
 
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN: {
@@ -77,12 +102,15 @@ public class SignUpActivity extends AppCompatActivity {
 
                         Intent userService = createUserServiceIntent();
 
-                         userService.putExtra("name", inputs.get(Inputs.NAME).getText().toString());
+                        userService.putExtra("name", inputs.get(Inputs.NAME).getText().toString());
                         userService.putExtra("surname", inputs.get(Inputs.SURNAME).getText().toString());
                         userService.putExtra("email", inputs.get(Inputs.EMAIL).getText().toString());
                         userService.putExtra("password", inputs.get(Inputs.PASSWORD).getText().toString());
 
                         startService(userService);
+
+                        navigateToSignInActivity();
+                        stopService(userService);
 
                         break;
                     }
@@ -133,11 +161,13 @@ public class SignUpActivity extends AppCompatActivity {
     public void navigateToSignInActivity() {
         Intent signInActivity = new Intent(this, SignInActivity.class);
         startActivity(signInActivity);
+        finish();
     }
 
     public void navigateToMainActivity() {
         Intent mainActivity = new Intent(this, MainActivity.class);
         startActivity(mainActivity);
+        finish();
     }
 
 

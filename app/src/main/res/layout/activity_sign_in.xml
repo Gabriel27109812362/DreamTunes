@@ -23,16 +23,16 @@
     <EditText
         android:id="@+id/email_sign_in_input"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="154dp"
         android:layout_marginEnd="45dp"
         android:background="@drawable/text_input"
         android:ems="10"
-        android:textColor="@color/colorMain"
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
         android:textAppearance="@style/input_text"
+        android:textColor="@color/colorMain"
         android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,9 +43,9 @@
     <CheckBox
         android:id="@+id/remember_me_check_box"
         android:layout_width="149dp"
-        android:layout_height="44dp"
+        android:layout_height="32dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="217dp"
         android:buttonTint="@color/colorMain"
         android:fontFamily="@font/open_sans"
@@ -60,20 +60,19 @@
     <EditText
         android:id="@+id/password_sign_in_input"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:textColor="@color/colorMain"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="45dp"
         android:background="@drawable/text_input"
         android:ems="10"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         android:textAppearance="@style/input_text"
+        android:textColor="@color/colorMain"
         android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_sign_in_input"
+        app:layout_constraintTop_toBottomOf="@+id/validator_email_sign_in"
         tools:layout_conversion_absoluteHeight="32dp"
         tools:layout_conversion_absoluteWidth="323dp" />
 
@@ -116,6 +115,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dont_have_account_text" />
+
+    <TextView
+        android:id="@+id/validator_email_sign_in"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:textColor="@color/colorMain"
+        android:fontFamily="@font/open_sans"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_sign_in_input" />
+
+    <TextView
+        android:id="@+id/validator_password_sign_in"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:fontFamily="@font/open_sans"
+        android:textColor="@color/colorMain"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_sign_in_input" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

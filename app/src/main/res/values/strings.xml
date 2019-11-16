@@ -13,9 +13,6 @@
 
 
 
-
-
-
 <!--    Validators-->
 
     <string name="name_required">Name is required</string>
@@ -24,8 +21,14 @@
     <string name="password_required">Password is required</string>
 
     <string name="wrong_format">Wrong format</string>
+    <string name="email_exists">Email has already exists</string>
     <string name="password_too_short">Password too short</string>
 
+
     <string name="fill_all_form">"Fill all form correctly"</string>
+
+<!--    Facebook strings-->
+    <string name="facebook_app_id">1388750627951968</string>
+    <string name="fb_login_protocol_scheme">fb1388750627951968</string>
 
 </resources>

@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dreamtunes.Services.UserService;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import validators.InputValidator;
@@ -28,7 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
     private Button signUp;
     private Button facebook;
 
-    private Map<Inputs, EditText> inputs = new HashMap<Inputs, EditText>();
+    private Map<Inputs, EditText> inputs = new EnumMap<>(Inputs.class);
+    private Map<Inputs, Boolean> validatorLock = new EnumMap<>(Inputs.class);
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -50,6 +51,10 @@ public class SignUpActivity extends AppCompatActivity {
         inputs.put(Inputs.EMAIL, (EditText) findViewById(R.id.input_email));
         inputs.put(Inputs.PASSWORD, (EditText) findViewById(R.id.input_password));
 
+        validatorLock.put(Inputs.NAME, false);
+        validatorLock.put(Inputs.SURNAME, false);
+        validatorLock.put(Inputs.EMAIL, false);
+        validatorLock.put(Inputs.PASSWORD, false);
 
         imageTopTitle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,18 +78,72 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if (text.length() == 0) {
                     validator.setText(R.string.name_required);
-                    signUp.setEnabled(false);
+                    validatorLock.put(Inputs.NAME, false);
                 } else {
                     validator.setText(null);
-                    signUp.setEnabled(true);
+                    validatorLock.put(Inputs.NAME, true);
+                }
+            }
+        });
+
+        inputs.get(Inputs.SURNAME).addTextChangedListener(new InputValidator((EditText) findViewById(R.id.input_surname)) {
+            @Override
+            public void validate(EditText textInput, String text) {
+                TextView validator = findViewById(R.id.validator_surname);
+
+                if (text.length() == 0) {
+                    validator.setText(R.string.surname_required);
+                    validatorLock.put(Inputs.SURNAME, false);
+                } else {
+                    validator.setText(null);
+                    validatorLock.put(Inputs.SURNAME, true);
                 }
 
-                Log.i("text", text);
-                Log.i("Edit Text", textView.getText().toString());
             }
         });
 
 
+        inputs.get(Inputs.EMAIL).addTextChangedListener(new InputValidator((EditText) findViewById(R.id.input_email)) {
+            @Override
+            public void validate(EditText textInput, String text) {
+                TextView validator = findViewById(R.id.validator_email);
+
+                if (text.length() == 0) {
+                    validator.setText(R.string.email_required);
+                    validatorLock.put(Inputs.EMAIL, false);
+                } else {
+                    if (!text.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+                        validator.setText(R.string.wrong_format);
+                        validatorLock.put(Inputs.EMAIL, false);
+                    } else {
+                        validator.setText(null);
+                        validatorLock.put(Inputs.EMAIL, true);
+                    }
+                }
+
+            }
+        });
+
+        inputs.get(Inputs.PASSWORD).addTextChangedListener(new InputValidator((EditText) findViewById(R.id.input_password)) {
+            @Override
+            public void validate(EditText textInput, String text) {
+                TextView validator = findViewById(R.id.validator_password);
+
+                if (text.length() == 0) {
+                    validator.setText(R.string.password_required);
+                    validatorLock.put(Inputs.PASSWORD, false);
+                } else {
+                    if (text.length() <= 6) {
+                        validator.setText(R.string.password_too_short);
+                        validatorLock.put(Inputs.PASSWORD, false);
+                    } else {
+                        validator.setText(null);
+                        validatorLock.put(Inputs.PASSWORD, true);
+                    }
+                }
+
+            }
+        });
 
 
         signUp.setOnTouchListener(new View.OnTouchListener() {
@@ -100,17 +159,22 @@ public class SignUpActivity extends AppCompatActivity {
 
                         v.setBackgroundResource(R.drawable.ic_sign_up_button);
 
-                        Intent userService = createUserServiceIntent();
+                        if (isValid()) {
 
-                        userService.putExtra("name", inputs.get(Inputs.NAME).getText().toString());
-                        userService.putExtra("surname", inputs.get(Inputs.SURNAME).getText().toString());
-                        userService.putExtra("email", inputs.get(Inputs.EMAIL).getText().toString());
-                        userService.putExtra("password", inputs.get(Inputs.PASSWORD).getText().toString());
+                            Intent userService = createUserServiceIntent();
 
-                        startService(userService);
+                            userService.putExtra("name", inputs.get(Inputs.NAME).getText().toString());
+                            userService.putExtra("surname", inputs.get(Inputs.SURNAME).getText().toString());
+                            userService.putExtra("email", inputs.get(Inputs.EMAIL).getText().toString());
+                            userService.putExtra("password", inputs.get(Inputs.PASSWORD).getText().toString());
 
-                        navigateToSignInActivity();
-                        stopService(userService);
+                            startService(userService);
+
+                            navigateToSignInActivity();
+                            stopService(userService);
+                        } else {
+                            Toast.makeText(getApplicationContext(), R.string.fill_all_form, Toast.LENGTH_SHORT).show();
+                        }
 
                         break;
                     }
@@ -162,6 +226,13 @@ public class SignUpActivity extends AppCompatActivity {
         Intent signInActivity = new Intent(this, SignInActivity.class);
         startActivity(signInActivity);
         finish();
+    }
+
+    public boolean isValid() {
+        for (Map.Entry<Inputs, Boolean> entry : validatorLock.entrySet()) {
+            if (!entry.getValue()) return false;
+        }
+        return true;
     }
 
     public void navigateToMainActivity() {

@@ -21,7 +21,7 @@
     <EditText
         android:id="@+id/input_name"
         android:layout_width="330dp"
-        android:layout_height="35dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="87dp"
         android:layout_marginEnd="46dp"
@@ -32,7 +32,7 @@
         android:inputType="textPersonName"
         android:textAppearance="@style/input_text"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_start_third" />
@@ -40,9 +40,8 @@
     <EditText
         android:id="@+id/input_surname"
         android:layout_width="330dp"
-        android:layout_height="35dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -50,17 +49,16 @@
         android:hint="@string/surname"
         android:inputType="textPersonName"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_name" />
+        app:layout_constraintTop_toBottomOf="@+id/validator_name" />
 
     <EditText
         android:id="@+id/input_email"
         android:layout_width="330dp"
-        android:layout_height="35dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -68,17 +66,16 @@
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_surname" />
+        app:layout_constraintTop_toBottomOf="@+id/validator_surname" />
 
     <EditText
         android:id="@+id/input_password"
         android:layout_width="330dp"
-        android:layout_height="35dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -86,10 +83,10 @@
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+        app:layout_constraintTop_toBottomOf="@+id/validator_email" />
 
     <Button
         android:id="@+id/button_sign_up"
@@ -159,7 +156,7 @@
     <TextView
         android:id="@+id/validator_name"
         android:layout_width="330dp"
-        android:layout_height="15dp"
+        android:layout_height="16dp"
         android:fontFamily="@font/open_sans"
         android:layout_marginStart="40dp"
         android:textColor="@color/colorMain"
@@ -170,7 +167,7 @@
     <TextView
         android:id="@+id/validator_surname"
         android:layout_width="330dp"
-        android:layout_height="15dp"
+        android:layout_height="16dp"
         android:fontFamily="@font/open_sans"
         android:layout_marginStart="40dp"
         android:textColor="@color/colorMain"
@@ -181,7 +178,7 @@
     <TextView
         android:id="@+id/validator_email"
         android:layout_width="330dp"
-        android:layout_height="15dp"
+        android:layout_height="16dp"
         android:fontFamily="@font/open_sans"
         android:layout_marginStart="40dp"
         android:textColor="@color/colorMain"
@@ -192,7 +189,7 @@
     <TextView
         android:id="@+id/validator_password"
         android:layout_width="330dp"
-        android:layout_height="15dp"
+        android:layout_height="16dp"
         android:fontFamily="@font/open_sans"
         android:layout_marginStart="40dp"
         android:textColor="@color/colorMain"

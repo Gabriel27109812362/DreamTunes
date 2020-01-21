@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dreamtunes.Services.UserService;
+import com.facebook.login.LoginManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,13 +27,14 @@ import java.util.Map;
 
 import validators.InputValidator;
 
+
 public class SignUpActivity extends AppCompatActivity {
 
 
     private Button signInLink;
     private ImageView imageTopTitle;
     private Button signUp;
-    private Button facebook;
+
 
     private Map<Inputs, EditText> inputs = new EnumMap<>(Inputs.class);
     private Map<Inputs, TextView> validators = new EnumMap<>(Inputs.class);
@@ -52,7 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         signInLink = findViewById(R.id.sign_in_link);
         imageTopTitle = findViewById(R.id.title_start_third);
         signUp = findViewById(R.id.button_sign_up);
-        facebook = findViewById(R.id.sign_up_with_fb_btn);
+
 
         inputs.put(Inputs.NAME, (EditText) findViewById(R.id.input_name));
         inputs.put(Inputs.SURNAME, (EditText) findViewById(R.id.input_surname));
@@ -137,16 +139,15 @@ public class SignUpActivity extends AppCompatActivity {
         inputs.get(Inputs.PASSWORD).addTextChangedListener(new InputValidator((EditText) findViewById(R.id.input_password)) {
             @Override
             public void validate(EditText textInput, String text) {
-                TextView validator = findViewById(R.id.validator_password);
                 if (text.length() == 0) {
-                    validator.setText(R.string.password_required);
+                    validators.get(Inputs.PASSWORD).setText(R.string.password_required);
                     validatorLock.put(Inputs.PASSWORD, false);
                 } else {
                     if (text.length() <= 6) {
-                        validator.setText(R.string.password_too_short);
+                        validators.get(Inputs.PASSWORD).setText(R.string.password_too_short);
                         validatorLock.put(Inputs.PASSWORD, false);
                     } else {
-                        validator.setText(null);
+                        validators.get(Inputs.PASSWORD).setText(null);
                         validatorLock.put(Inputs.PASSWORD, true);
                     }
                 }
@@ -164,6 +165,8 @@ public class SignUpActivity extends AppCompatActivity {
                         break;
                     }
                     case MotionEvent.ACTION_UP: {
+
+
                         v.setBackgroundResource(R.drawable.ic_sign_up_button);
 
                         if (isValid()) {
@@ -200,24 +203,6 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
 
-        facebook.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN: {
-                        v.setBackgroundResource(R.drawable.ic_facebook_ico_clicked);
-                        break;
-                    }
-                    case MotionEvent.ACTION_UP: {
-                        v.setBackgroundResource(R.drawable.ic_facebook_ico);
-                        break;
-                    }
-                    default:
-                        break;
-                }
-                return true;
-            }
-        });
     }
 
     public Intent createUserServiceIntent() {
@@ -252,7 +237,6 @@ public class SignUpActivity extends AppCompatActivity {
         startService(userService);
         navigateToSignInActivity();
         stopService(userService);
-
     }
 
 

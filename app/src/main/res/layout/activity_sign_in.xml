@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="154dp"
+        android:layout_marginTop="134dp"
         android:layout_marginEnd="45dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -56,6 +56,51 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_sign_in_input" />
+
+
+
+    <Button
+        android:id="@+id/sign_up_with_fb_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="186dp"
+        android:background="@drawable/ic_facebook_ico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/or_sign_up_fb_text" />
+
+    <com.facebook.login.widget.LoginButton
+        android:visibility="invisible"
+        android:id="@+id/sign_up_with_fb_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="186dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/or_sign_up_fb_text" />
+
+
+
+    <TextView
+        android:id="@+id/or_sign_up_fb_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="123dp"
+        android:fontFamily="@font/open_sans"
+        android:text="@string/sign_up_fb"
+        android:textColor="@color/colorMain"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_sign_in" />
+
+
 
     <EditText
         android:id="@+id/password_sign_in_input"
@@ -94,7 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="130dp"
         android:fontFamily="@font/open_sans"
         android:text="@string/dont_have_acccount"
@@ -102,7 +147,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_sign_in" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_with_fb_view" />
 
     <Button
         android:id="@+id/sign_up_link"

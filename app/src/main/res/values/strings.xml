@@ -24,6 +24,8 @@
     <string name="email_exists">Email has already exists</string>
     <string name="password_too_short">Password too short</string>
 
+    <string name="wrong_password">Password is wrong</string>
+    <string name="wrong_email">Email is wrong</string>
 
     <string name="fill_all_form">"Fill all form correctly"</string>
 

@@ -3,7 +3,6 @@ package validators;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public abstract class InputValidator implements TextWatcher {
 

@@ -100,32 +100,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_password" />
 
-    <TextView
-        android:id="@+id/or_sign_up_fb_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="123dp"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/sign_up_fb"
-        android:textColor="@color/colorMain"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
 
-    <Button
-        android:id="@+id/sign_up_with_fb_btn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="186dp"
-        android:background="@drawable/ic_facebook_ico"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/or_sign_up_fb_text" />
+
 
     <TextView
         android:id="@+id/have_an_account_text"
@@ -139,7 +115,7 @@
         android:textColor="@color/colorMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_with_fb_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
 
     <Button
         android:id="@+id/sign_in_link"

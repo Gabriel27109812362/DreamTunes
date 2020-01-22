@@ -228,6 +228,7 @@ public class SignUpActivity extends AppCompatActivity {
         finish();
     }
 
+
     public void runUserService() {
         Intent userService = createUserServiceIntent();
         userService.putExtra("name", inputs.get(Inputs.NAME).getText().toString());

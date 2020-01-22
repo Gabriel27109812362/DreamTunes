@@ -37,6 +37,7 @@ import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.Map;
 
 import validators.InputValidator;
@@ -171,9 +172,7 @@ public class SignInActivity extends AppCompatActivity {
                                                                 .document("logged_user")
                                                                 .set(results);
 
-
-                                                        // todo redirect to music activity
-
+                                                        navigateToMusicActivity();
                                                     } else {
                                                         validators.get(Inputs.PASSWORD).setText(R.string.wrong_password);
                                                         validatorLock.put(Inputs.PASSWORD, false);
@@ -274,20 +273,27 @@ public class SignInActivity extends AppCompatActivity {
             public void onCompleted(JSONObject object, GraphResponse response) {
                 Log.i("response", response.toString());
                 try {
-                    String first_name = object.getString("first_name");
-                    String last_name = object.getString("last_name");
-//                    String email = object.getString("email");
+                    Map<String, String> userData = new HashMap<>();
+
                     String id = object.getString("id");
                     String image_url = "https://graph.facebook.com" + id + "/picture?type=normal";
 
+                    userData.put("firstName", object.getString("first_name"));
+                    userData.put("lastName", object.getString("last_name"));
+                    userData.put("email", object.getString("email"));
+                    userData.put("id", id);
+                    userData.put("photo", image_url);
 
-                    Log.i("FIRST_NAME", first_name);
-                    Log.i("SURNAME", last_name);
-//                    Log.i("EMAIL", email);
-                    Log.i("ID", id);
 
+                    db.collection("logged")
+                            .document("logged_user")
+                            .delete();
 
-                    // todo save data in db
+                    db.collection("logged")
+                            .document("logged_user")
+                            .set(userData);
+
+                    navigateToMusicActivity();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -315,6 +321,12 @@ public class SignInActivity extends AppCompatActivity {
     public void navigateToSignUpActivity() {
         Intent signUpActivity = new Intent(this, SignUpActivity.class);
         startActivity(signUpActivity);
+        finish();
+    }
+
+    public void navigateToMusicActivity() {
+        Intent musicActivity = new Intent(this, MusicActivity.class);
+        startActivity(musicActivity);
         finish();
     }
 

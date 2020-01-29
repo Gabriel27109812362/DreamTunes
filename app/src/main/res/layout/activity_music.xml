@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MusicActivity">
 
-
-    />
-
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="239dp"
@@ -23,7 +19,7 @@
         app:srcCompat="@drawable/ic_title_small" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_your_account"
         android:layout_width="106dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -33,12 +29,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_all_songs"
         android:layout_width="106dp"
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/ic_all_songs_clicked"
+        android:background="@drawable/ic_all_songs"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -52,7 +48,7 @@
         android:background="@drawable/ic_play_button"
         app:layout_constraintEnd_toStartOf="@+id/stop"
         app:layout_constraintStart_toEndOf="@+id/pause"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button_your_account" />
 
     <Button
         android:id="@+id/pause"
@@ -60,9 +56,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="255dp"
+        android:background="#FFB900"
         android:text="pause"
+        android:textColor="#000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button_all_songs" />
 
     <Button
         android:id="@+id/stop"
@@ -70,8 +68,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="255dp"
         android:layout_marginEnd="32dp"
+        android:background="#FFB900"
         android:text="stop"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button_your_account" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

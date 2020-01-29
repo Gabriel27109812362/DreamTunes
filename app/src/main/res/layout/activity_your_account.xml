@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YourAccountActivity">
+
+
+    <ImageView
+        android:id="@+id/title_small_logout"
+        android:layout_width="239dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="86dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_title_small" />
+
+    <Button
+        android:id="@+id/button_your_account_log_out"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ic_your_acount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_small_logout" />
+
+    <Button
+        android:id="@+id/button_all_songs_log_out"
+        android:layout_width="106dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/ic_all_songs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_small_logout" />
+
+
+    <TextView
+        android:id="@+id/loged_as_title"
+        android:layout_width="202dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="105dp"
+        android:text="You are loged as:"
+        android:textColor="@color/colorMain"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_your_account_log_out" />
+
+    <TextView
+        android:textAlignment="center"
+        android:id="@+id/logged_out_message"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="47dp"
+        android:textColor="@color/colorMain"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loged_as_title" />
+
+    <Button
+        android:id="@+id/log_out_button"
+        android:layout_width="91dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="160dp"
+        android:text="Log out"
+        android:background="#ffb900"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logged_out_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

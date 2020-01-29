@@ -11,6 +11,25 @@
     <string name="have_an_account">Have an account ?</string>
     <string name="random">Play random</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Validators-->
+
+    <string name="name_required">Name is required</string>
+    <string name="surname_required">Surname is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="password_required">Password is required</string>
+
+    <string name="wrong_format">Wrong format</string>
+    <string name="email_exists">Email has already exists</string>
+    <string name="password_too_short">Password too short</string>
+
+    <string name="wrong_password">Password is wrong</string>
+    <string name="wrong_email">Email is wrong</string>
+
+    <string name="fill_all_form">"Fill all form correctly"</string>
+
+    <!--    Facebook strings-->
+    <string name="facebook_app_id">1388750627951968</string>
+    <string name="fb_login_protocol_scheme">fb1388750627951968</string>
+
 </resources>

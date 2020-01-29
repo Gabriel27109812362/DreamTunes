@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_UP: {
                         v.setBackgroundResource(R.drawable.ic_play_button);
                         navigateToSignIn();
+
                         break;
                     }
                     default:
@@ -54,13 +56,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
+
 
     public void navigateToSignIn() {
         Intent signInActivity = new Intent(this, SignInActivity.class);
         startActivity(signInActivity);
+        finish();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("ON_DESTROY", "On destroy MainActivity");
+    }
 
 }

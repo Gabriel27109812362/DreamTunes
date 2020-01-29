@@ -21,9 +21,9 @@
     <EditText
         android:id="@+id/input_name"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -32,7 +32,7 @@
         android:inputType="textPersonName"
         android:textAppearance="@style/input_text"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_start_third" />
@@ -40,27 +40,25 @@
     <EditText
         android:id="@+id/input_surname"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
         android:fontFamily="@font/open_sans"
         android:hint="@string/surname"
-        android:textColor="@color/colorMain"
         android:inputType="textPersonName"
-        android:textColorHint="@color/colorMain"
+        android:textColor="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_name" />
+        app:layout_constraintTop_toBottomOf="@+id/validator_name" />
 
     <EditText
         android:id="@+id/input_email"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -68,17 +66,16 @@
         android:hint="@string/email_hint"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_surname" />
+        app:layout_constraintTop_toBottomOf="@+id/validator_surname" />
 
     <EditText
         android:id="@+id/input_password"
         android:layout_width="330dp"
-        android:layout_height="45dp"
+        android:layout_height="34dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/text_input"
         android:ems="10"
@@ -86,10 +83,10 @@
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         android:textColor="@color/colorMain"
-        android:textColorHint="@color/colorMain"
+        android:textColorHint="@color/colorMainMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+        app:layout_constraintTop_toBottomOf="@+id/validator_email" />
 
     <Button
         android:id="@+id/button_sign_up"
@@ -103,32 +100,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_password" />
 
-    <TextView
-        android:id="@+id/or_sign_up_fb_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="123dp"
-        android:fontFamily="@font/open_sans"
-        android:text="@string/sign_up_fb"
-        android:textColor="@color/colorMain"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
 
-    <Button
-        android:id="@+id/sign_up_with_fb_btn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="186dp"
-        android:background="@drawable/ic_facebook_ico"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/or_sign_up_fb_text" />
+
 
     <TextView
         android:id="@+id/have_an_account_text"
@@ -142,7 +115,7 @@
         android:textColor="@color/colorMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_with_fb_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
 
     <Button
         android:id="@+id/sign_in_link"
@@ -155,5 +128,49 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/have_an_account_text" />
+
+    <TextView
+        android:id="@+id/validator_name"
+        android:layout_width="330dp"
+        android:layout_height="16dp"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/colorMain"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_name" />
+
+    <TextView
+        android:id="@+id/validator_surname"
+        android:layout_width="330dp"
+        android:layout_height="16dp"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/colorMain"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_surname" />
+
+    <TextView
+        android:id="@+id/validator_email"
+        android:layout_width="330dp"
+        android:layout_height="16dp"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/colorMain"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+    <TextView
+        android:id="@+id/validator_password"
+        android:layout_width="330dp"
+        android:layout_height="16dp"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/colorMain"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
